@@ -63,3 +63,6 @@ typings/
 
 # Idea
 .idea/
+
+# database
+db.json

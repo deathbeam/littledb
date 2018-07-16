@@ -1,6 +1,6 @@
 {
   "name": "littledb",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "The littlest key-value database",
   "main": "lib/littledb.js",
   "bin": {

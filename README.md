@@ -3,35 +3,22 @@
 `littledb` is the littlest key-value database possible based on this
 awesome [gist](https://gist.github.com/brandonb927/9587436).
 
-`littledb` consists of simple JavaScript API to `put`/`get`/`del` and `ls`
-to/from database. 
+`littledb` consists of simple JavaScript API to `put`/`get` and `ls`
+to/from database and simple database server.
 
-To create simple client:
+To run server, simply install package and run
 
-```javascript
-const db = require('littledb')('./db.json')
-
-db.put('hello', 'world') // => "world"
-db.get('hello')          // => "world"
-db.ls()                  // => [ "hello" ]
-db.del('hello')          // => true
-db.get('hello')          // => undefined
+```bash
+littledb 80 # this is default port, not required to be passed
 ```
 
-It also contains super simple HTTP service that you can use as generic key-value
-remote database.
-
-Keys and values are separated simply with a semicolon, and arrays by
-using multiple semicolons.
-To delete key we simply put no value after semicolon.
-
-To run local instance of service pointing to `./db.json` on port `80` simply do:
-
+or in node.js
 ```javascript
-require('littledb')().serve()
+const port = 80 // this is default port, not required to be passed
+require('littledb')().serve(port)
 ```
 
-Then you can simply manipulate it with curl:
+Then you can simply access it with `curl`:
 
 
 ```sh
@@ -47,6 +34,15 @@ curl -d "key" localhost
 curl -d "key;" localhost
 ```
 
-By default this package will also install `littledb` executable that will
-start `littledb` server with single parameter that simply determine port
-(not required, defaults to 80).
+To create simple client:
+
+```javascript
+const path = './db.json' // this is default path, not required to be passed
+const db = require('littledb')(path)
+
+db.put('hello', 'world') // => "world"
+db.get('hello')          // => "world"
+db.ls()                  // => [ "hello" ]
+db.put('hello')          // => undefined
+db.get('hello')          // => undefined
+```
