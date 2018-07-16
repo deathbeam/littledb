@@ -1,0 +1,27 @@
+{
+  "name": "littledb",
+  "version": "1.0.0",
+  "description": "The littlest NoSQL database",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deathbeam/littledb.git"
+  },
+  "keywords": [
+    "nosql",
+    "database",
+    "json"
+  ],
+  "author": "Tomas Slusny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deathbeam/littledb/issues"
+  },
+  "homepage": "https://github.com/deathbeam/littledb#readme",
+  "devDependencies": {
+    "standard": "^11.0.1"
+  }
+}
