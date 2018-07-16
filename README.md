@@ -14,7 +14,8 @@ const db = require('littledb')(databasePath)
 
 db.put('hello', 'world')
 console.log(db.get('hello')) // => world
-console.log(db.ls()) // => { "hello": "world" }
+console.log(db.ls()) // => [ "hello" ]
+console.log(db.sh()) // => { "hello": "world" }
 db.del('hello')
 console.log(db.get('hello')) // => undefined
 ```
@@ -42,6 +43,8 @@ curl -d "key;value" localhost
 curl -d "key;value;value;value" localhost  
 # show keys
 curl -d "ls" localhost  
+# show entire db
+curl -d "sh" localhost
 # get value
 curl -d "key" localhost  
 # delete key

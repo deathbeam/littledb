@@ -1,7 +1,7 @@
 {
   "name": "littledb",
-  "version": "1.0.0",
-  "description": "The littlest NoSQL database",
+  "version": "1.0.3",
+  "description": "The littlest key-value database",
   "main": "index.js",
   "scripts": {
     "test": "standard"
