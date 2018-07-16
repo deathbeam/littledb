@@ -9,15 +9,13 @@ to/from database.
 To create simple client:
 
 ```javascript
-const databasePath = './db.json'
-const db = require('littledb')(databasePath)
+const db = require('littledb')('./db.json')
 
-db.put('hello', 'world')
-console.log(db.get('hello')) // => world
-console.log(db.ls()) // => [ "hello" ]
-console.log(db.sh()) // => { "hello": "world" }
-db.del('hello')
-console.log(db.get('hello')) // => undefined
+db.put('hello', 'world') // => "world"
+db.get('hello')          // => "world"
+db.ls()                  // => [ "hello" ]
+db.del('hello')          // => true
+db.get('hello')          // => undefined
 ```
 
 It also contains super simple HTTP service that you can use as generic key-value
@@ -43,10 +41,12 @@ curl -d "key;value" localhost
 curl -d "key;value;value;value" localhost  
 # show keys
 curl -d "ls" localhost  
-# show entire db
-curl -d "sh" localhost
 # get value
 curl -d "key" localhost  
 # delete key
 curl -d "key;" localhost
 ```
+
+By default this package will also install `littledb` executable that will
+start `littledb` server with single parameter that simply determine port
+(not required, defaults to 80).

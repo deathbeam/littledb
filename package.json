@@ -1,8 +1,11 @@
 {
   "name": "littledb",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The littlest key-value database",
-  "main": "index.js",
+  "main": "lib/littledb.js",
+  "bin": {
+    "littledb": "bin/littledb.js"
+  },
   "scripts": {
     "test": "standard"
   },
