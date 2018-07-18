@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-require('../lib/littledb')().serve(process.argv[2])
+require('../lib/littledb')().listen(process.argv[2])

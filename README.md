@@ -9,13 +9,13 @@ to/from database and simple database server.
 To run server, simply install package and run
 
 ```bash
-littledb 80 # this is default port, not required to be passed
+littledb 80 # without passing some available port will be chosen
 ```
 
 or in node.js
 ```javascript
-const port = 80 // this is default port, not required to be passed
-require('littledb')().serve(port)
+const port = 80
+require('littledb')().listen(port)
 ```
 
 Then you can simply access it with `curl`:
