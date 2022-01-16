@@ -1,6 +1,6 @@
 {
   "name": "littledb",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "The littlest key-value database",
   "main": "lib/littledb.js",
   "bin": {
@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/deathbeam/littledb#readme",
   "devDependencies": {
-    "standard": "^14.3.4"
+    "standard": "^16.0.4"
   }
 }
